@@ -1,0 +1,32 @@
+{
+    "host": "localhost",
+    "port": 3030,
+    "public": "../public/",
+    "paginate": {
+        "default": 10,
+        "max": 50
+    },
+    "authentication": {
+        "entity": "user",
+        "service": "user",
+        "secret": "ZHbUMrJiQ1fr96zNwxhFHM2GI1Y=",
+        "authStrategies": [
+            "jwt",
+            "local"
+        ],
+        "jwtOptions": {
+            "header": {
+                "typ": "access"
+            },
+            "audience": "https://yourdomain.com",
+            "issuer": "feathers",
+            "algorithm": "HS256",
+            "expiresIn": "365d"
+        },
+        "local": {
+            "usernameField": "email",
+            "passwordField": "password"
+        }
+    },
+    "mongodb": "mongodb+srv://blog:Blog@1234@blog-post.9ultm.mongodb.net/blog_api"
+}
