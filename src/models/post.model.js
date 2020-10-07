@@ -1,53 +1,36 @@
-// user-model.js - A mongoose model
+// post-model.js - A mongoose model
 //
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 export default function (app) {
-    const modelName = 'user';
+    const modelName = 'post';
     const mongooseClient = app.get('mongooseClient');
-    const schema = new mongooseClient.Schema({
+    const { Schema } = mongooseClient;
+    const schema = new Schema({
 
-        name: {
-            type: String,
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: 'user',
             required: true
         },
-        email: {
-            type: String,
-            unique: true,
-            lowercase: true,
-            required: true
-        },
-        password: {
-            type: String,
-            required: true
-        },
-        phone: {
+        title: {
             type: String,
             required: true,
+            maxLength: 50
         },
-        gender: {
-            /**
-             * 1. male
-             * 2. female
-             * 3. binary
-             * 4. rather not to say
-             */
-            type: Number,
-            default: 0,
+        description: {
+            type: String,
+            required: true,
+            maxLength: 200
         },
-        avatar: {
+        attachment: {
             type: String,
             default: ''
-        },
-        postCount: {
-            type: Number,
-            default: 0
         },
         active: {
             type: Boolean,
             default: true
         }
-
 
     }, {
         timestamps: true
