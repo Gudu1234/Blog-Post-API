@@ -6,6 +6,7 @@ import {disallow} from 'feathers-hooks-common';
 import setId from '../../hooks/setId';
 import patchDeleted from '../../hooks/patchDeleted';
 import CheckEmailOrPhone from '../../hooks/CheckEmailOrPhone';
+import GenerateAccessToken from './hooks/GenerateAccessToken';
 
 const { authenticate } = feathersAuthentication.hooks;
 const { hashPassword, protect } = local.hooks;
@@ -37,7 +38,7 @@ export default {
         ],
         find: [],
         get: [],
-        create: [],
+        create: [GenerateAccessToken()],
         update: [],
         patch: [],
         remove: []
