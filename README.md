@@ -40,6 +40,11 @@ $ feathers generate hook                  # Generate a new Hook
 $ feathers help                           # Show all commands
 ```
 
+## Project Description
+
+This Project is about posting of Blogs. By Using Feathers we make a simple Blog API using which we can build our front-end applications in different platforms. 
+You have to run this project on localhost and test it.
+
 ## Help
 
 For more information on all the things you can do with Feathers visit [docs.feathersjs.com](http://docs.feathersjs.com).
